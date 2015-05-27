@@ -63,12 +63,9 @@ log*/
 
 var wood = _.filter (data, function(woodListing){
     if (_.contains(woodListing.materials, "wood")){
-    return true;
+      console.log(woodListing.title + " is made of wood.");
   }}
 );
-
-var woodTitle = _.pluck(wood, 'title');
-console.log(woodTitle + " is made of wood.");
 
 //Question 5
 
@@ -79,11 +76,24 @@ can't figure out how to get just the materials inside the array
 */
 
 var materialList = data.filter(function(list){
-  return list.materials.length >= 8;
+  return (list.materials.length >= 8);
 }
 );
 
-console.log(materialList);
+
+
+materialList.forEach(function(listing){
+  console.log(listing.title + " has " + listing.materials.length + " materials:" + listing.materials);
+}
+);
+
+// var madeWithEightMaterials = _.filter(data, function(findAllItems) {
+//   return (findAllItems.materials.length > 8);
+// });
+//
+// madeWithEightMaterials.forEach(function(item) {
+//   console.log(item.title, item.materials);
+// });
 
 //Question 6
 
