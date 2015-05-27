@@ -57,28 +57,37 @@ console.log(justPounds + " costs " + "£" + amountPounds + ".");
 
 //Question 4
 
-//find materials of each item
-var materials = _.filter (data,
-  function(woodFinder){
-    return (woodFinder.materials) === "wood";
-  }
-  );
+/*find materials of each item
+filter for only wood materials
+log*/
 
- console.log(materials);
+var wood = _.filter (data, function(woodListing){
+    if (_.contains(woodListing.materials, "wood")){
+    return true;
+  }}
+);
 
-//filter for only wood materials
-
-//log
+var woodTitle = _.pluck(wood, 'title');
+console.log(woodTitle + " is made of wood.");
 
 //Question 5
 
-//find materials for each item
+/*find materials for each item
+filter for materials that are greater than 8*/
 
-//filter for materials that are greater than 8
+var materialList = data.filter(function(list){
+  return list.materials.length >= 8;
+}
+);
+
+console.log(materialList);
 
 //Question 6
 
-// var madeOwn = _.filter (data,
-//     ("who_made" === "i_did");
-//
-// console.log(madeOwn.length + " were made by their sellers.");
+var madeOwn = data.filter (function(listing){
+   if (listing.who_made === "i_did"){
+     return listing;
+   }
+ }
+ );
+   console.log(madeOwn.length + " were made by their sellers.");
