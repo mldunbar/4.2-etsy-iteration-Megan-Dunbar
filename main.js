@@ -72,8 +72,11 @@ console.log(woodTitle + " is made of wood.");
 
 //Question 5
 
-/*find materials for each item
-filter for materials that are greater than 8*/
+/*
+find materials for each item
+filter for materials that are greater than 8
+can't figure out how to get just the materials inside the array
+*/
 
 var materialList = data.filter(function(list){
   return list.materials.length >= 8;
@@ -83,6 +86,11 @@ var materialList = data.filter(function(list){
 console.log(materialList);
 
 //Question 6
+
+/*
+filter again for the personally made listings
+log it correctly
+*/
 
 var madeOwn = data.filter (function(listing){
    if (listing.who_made === "i_did"){
